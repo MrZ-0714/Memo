@@ -10,8 +10,19 @@ import Foundation
 struct MemoryGameModel<CardContent> {
     var cards: Array<Card>
     
-    func choose(card: Card) {
+    mutating func choose(card: Card) {
         print("Card chosen: \(card)")
+        let chosenIndex: Int = index(of: card)
+        cards[chosenIndex].isFaceUp = !cards[chosenIndex].isFaceUp
+    }
+    
+    func index(of card: Card) -> Int {
+        for index in 0...cards.count {
+            if cards[index].id == card.id {
+                return index
+            }
+        }
+        return -1 //TODO: bogus
     }
     
     //Init function. A struct can have multiple init function. 
