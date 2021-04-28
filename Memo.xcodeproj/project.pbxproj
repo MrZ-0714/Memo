@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE700E2F263772E0007CAD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E2E263772E0007CAD45 /* AppDelegate.swift */; };
 		DE700E31263772E0007CAD45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E30263772E0007CAD45 /* SceneDelegate.swift */; };
-		DE700E33263772E0007CAD45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E32263772E0007CAD45 /* ContentView.swift */; };
+		DE700E33263772E0007CAD45 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E32263772E0007CAD45 /* EmojiMemoryGameView.swift */; };
 		DE700E36263772E0007CAD45 /* Memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE700E34263772E0007CAD45 /* Memo.xcdatamodeld */; };
 		DE700E38263772E0007CAD45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE700E37263772E0007CAD45 /* Assets.xcassets */; };
 		DE700E3B263772E0007CAD45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE700E3A263772E0007CAD45 /* Preview Assets.xcassets */; };
@@ -22,7 +22,7 @@
 		DE700E2B263772E0007CAD45 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE700E2E263772E0007CAD45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE700E30263772E0007CAD45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE700E32263772E0007CAD45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE700E32263772E0007CAD45 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		DE700E35263772E0007CAD45 /* Memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memo.xcdatamodel; sourceTree = "<group>"; };
 		DE700E37263772E0007CAD45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE700E3A263772E0007CAD45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			children = (
 				DE700E2E263772E0007CAD45 /* AppDelegate.swift */,
 				DE700E30263772E0007CAD45 /* SceneDelegate.swift */,
-				DE700E32263772E0007CAD45 /* ContentView.swift */,
+				DE700E32263772E0007CAD45 /* EmojiMemoryGameView.swift */,
 				DE8FB0702638C91C005050B4 /* EmojiMemoryGame.swift */,
 				DE8FB06E2638C5AE005050B4 /* MemoryGame.swift */,
 				DE700E37263772E0007CAD45 /* Assets.xcassets */,
@@ -157,7 +157,7 @@
 				DE700E2F263772E0007CAD45 /* AppDelegate.swift in Sources */,
 				DE700E31263772E0007CAD45 /* SceneDelegate.swift in Sources */,
 				DE8FB06F2638C5AE005050B4 /* MemoryGame.swift in Sources */,
-				DE700E33263772E0007CAD45 /* ContentView.swift in Sources */,
+				DE700E33263772E0007CAD45 /* EmojiMemoryGameView.swift in Sources */,
 				DE700E36263772E0007CAD45 /* Memo.xcdatamodeld in Sources */,
 				DE8FB0712638C91C005050B4 /* EmojiMemoryGame.swift in Sources */,
 			);

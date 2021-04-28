@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Memo
 //
 //  Created by Zimo Zhao on 4/26/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ContentView: View {
         .padding()
         .foregroundColor(.orange)
         .font(viewModel.cards.count < 5 ? .largeTitle : .body)
-    } 
+    }
 }
 
 struct CardView: View {
