@@ -11,14 +11,10 @@ struct ContentView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
-        VStack {
-            ForEach(0..<4) { index in
-                HStack {
-                    ForEach(viewModel.cards) { card in
-                        CardView(card: card).onTapGesture {
-                            viewModel.choose(card: card)
-                        }
-                    }
+        HStack {
+            ForEach(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.choose(card: card)
                 }
             }
         }
@@ -40,7 +36,14 @@ struct CardView: View {
             } else {
                 RoundedRectangle(cornerRadius: 20.0).fill()
             }
-            
         }
+        //Change the aspect ratio to 2:3
+        .aspectRatio(2/3, contentMode: .fit)
     }
 }
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        return ContentView(viewModel: EmojiMemoryGame())
+//    }
+//}
