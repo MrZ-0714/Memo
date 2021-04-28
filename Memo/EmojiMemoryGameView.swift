@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    var viewModel: EmojiMemoryGame
+    var viewModel: EmojiMemoryGameViewModel
     
     var body: some View {
         HStack {
@@ -25,7 +25,7 @@ struct EmojiMemoryGameView: View {
 }
 
 struct CardView: View {
-    var card: MemoryGame<String>.Card
+    var card: MemoryGameModel<String>.Card
     
     var body: some View {
         ZStack {

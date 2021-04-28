@@ -1,5 +1,5 @@
 //
-//  MemoryGame.swift
+//  MemoryGameModel.swift
 //  Memo
 //
 //  Created by Zimo Zhao on 4/27/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemoryGame<CardContent> {
+struct MemoryGameModel<CardContent> {
     var cards: Array<Card>
     
     func choose(card: Card) {
