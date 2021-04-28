@@ -14,10 +14,13 @@ struct MemoryGame<CardContent> {
         print("Card chosen: \(card)")
     }
     
+    //Init function. A struct can have multiple init function. 
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairsOfCards {
-            let content = cardContentFactory(pairIndex)
+            //The MemoryGame initializer, init itself with a function passed in to tell what the card content is.
+            let content: CardContent = cardContentFactory(pairIndex)
+            //Append card to cards array.
             cards.append(Card(id:pairIndex*2, content: content))
             cards.append(Card(id:pairIndex*2+1, content: content))
         }
