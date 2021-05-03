@@ -12,8 +12,9 @@ struct MemoryGameModel<CardContent> {
     
     mutating func choose(card: Card) {
         print("Card chosen: \(card)")
-        let chosenIndex: Int = cards.firstIndex(matching: card)!
-        cards[chosenIndex].isFaceUp = !cards[chosenIndex].isFaceUp
+        if let chosenIndex: Int = cards.firstIndex(matching: card) {
+            cards[chosenIndex].isFaceUp = !cards[chosenIndex].isFaceUp
+        }
     }
     
     //Init function. A struct can have multiple init function. 
