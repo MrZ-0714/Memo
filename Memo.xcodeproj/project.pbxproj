@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE4A173E2640E29E002763AE /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A173D2640E29E002763AE /* Array+Only.swift */; };
 		DE700E2F263772E0007CAD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E2E263772E0007CAD45 /* AppDelegate.swift */; };
 		DE700E31263772E0007CAD45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E30263772E0007CAD45 /* SceneDelegate.swift */; };
 		DE700E33263772E0007CAD45 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE700E32263772E0007CAD45 /* EmojiMemoryGameView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE4A173D2640E29E002763AE /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		DE700E2B263772E0007CAD45 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE700E2E263772E0007CAD45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE700E30263772E0007CAD45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				DEA6C647263B6859003C515A /* Array+Identifiable.swift */,
 				DE8FB0702638C91C005050B4 /* EmojiMemoryGameViewModel.swift */,
 				DE8FB06E2638C5AE005050B4 /* MemoryGameModel.swift */,
+				DE4A173D2640E29E002763AE /* Array+Only.swift */,
 				DE700E37263772E0007CAD45 /* Assets.xcassets */,
 				DE700E3C263772E0007CAD45 /* LaunchScreen.storyboard */,
 				DE700E3F263772E0007CAD45 /* Info.plist */,
@@ -166,6 +169,7 @@
 				DE700E2F263772E0007CAD45 /* AppDelegate.swift in Sources */,
 				DE700E31263772E0007CAD45 /* SceneDelegate.swift in Sources */,
 				DE8FB06F2638C5AE005050B4 /* MemoryGameModel.swift in Sources */,
+				DE4A173E2640E29E002763AE /* Array+Only.swift in Sources */,
 				DE700E33263772E0007CAD45 /* EmojiMemoryGameView.swift in Sources */,
 				DE700E36263772E0007CAD45 /* Memo.xcdatamodeld in Sources */,
 				DEA6C648263B6859003C515A /* Array+Identifiable.swift in Sources */,
