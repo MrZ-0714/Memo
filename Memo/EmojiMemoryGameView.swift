@@ -33,7 +33,9 @@ struct CardView: View {
                     RoundedRectangle(cornerRadius: CornerRadius).stroke(lineWidth: LineWidth)
                     Text(card.content)
                 } else {
-                    RoundedRectangle(cornerRadius: CornerRadius).fill()
+                    if !card.isMatched {
+                        RoundedRectangle(cornerRadius: CornerRadius).fill()
+                    }
                 }
             }
             //Change the aspect ratio to 2:3
