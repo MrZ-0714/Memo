@@ -16,6 +16,8 @@ struct EmojiMemoryGameView: View {
                 viewModel.choose(card: card)
             }
             .padding(5)
+            //Change the aspect ratio to 2:3
+            .aspectRatio(2/3, contentMode: .fit)
         }
         .padding()
         .foregroundColor(Color.orange)
@@ -38,8 +40,6 @@ struct CardView: View {
                     }
                 }
             }
-            //Change the aspect ratio to 2:3
-            .aspectRatio(2/3, contentMode: .fit)
             .font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
         }
     }
