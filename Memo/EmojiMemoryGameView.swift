@@ -11,16 +11,37 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGameViewModel
     
     var body: some View {
-        Grid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                viewModel.choose(card: card)
+        VStack {
+            HStack{
+                // 7. Show the theme’s name somewhere in your UI.
+                Text(viewModel.chosenTheme).font(.title)
+                HStack(spacing: 1.0){
+                    Text("Score: ").font(.body).multilineTextAlignment(.trailing)
+                    Text("2").multilineTextAlignment(.leading)
+                }
+                .padding([.top, .leading, .trailing])
             }
-            .padding(5)
-            //Change the aspect ratio to 2:3
-            .aspectRatio(2/3, contentMode: .fit)
+            
+            Grid(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.choose(card: card)
+                }
+                .padding(5)
+                //Change the aspect ratio to 2:3
+                .aspectRatio(2/3, contentMode: .fit)
+            }
+            .padding()
+            .foregroundColor(Color.orange)
+            /*
+             6. Add a “New Game” button to your UI which begins a brand new game.
+             This new game should have a randomly chosen theme.
+             You can put this button anywhere you think looks best in your UI.
+             */
+            Button("New Game"){
+                print("NewGame pressed")
+                viewModel.startNewGame()
+            }
         }
-        .padding()
-        .foregroundColor(Color.orange)
     }
 }
 
@@ -50,8 +71,8 @@ struct CardView: View {
     let FontScaleFactor: CGFloat = 0.75
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        return ContentView(viewModel: EmojiMemoryGame())
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        return EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
+    }
+}

@@ -23,15 +23,15 @@ import SwiftUI
 struct GameTheme {
     let name: String
     let emojis: [String]
-    let numberOfCardsToShow: Int?
+    let numberOfCardsToShowMinusOne: Int?
     let color: SwiftUI.Color
     
-    static let animal = GameTheme(name: "Animals", emojis: ["🐶","🐱","🐭","🐹","🐰","🦊","🐻"], numberOfCardsToShow: 5, color: .green)
-    static let fruit = GameTheme(name: "Fruits", emojis: ["🍏","🍎","🍐","🍊","🍋","🍌","🍉"], numberOfCardsToShow: 5, color: .orange)
-    static let ball = GameTheme(name: "Ball", emojis: ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐"], numberOfCardsToShow: nil, color: .blue)
-    static let car = GameTheme(name: "Cars", emojis: ["🚗","🚕","🚙","🚌","🚎","🏎","🚓"], numberOfCardsToShow: 4, color: .yellow)
-    static let apple = GameTheme(name: "iProducts", emojis: ["⌚️","📱","💻","🖥","🖱","⌨️","💡"], numberOfCardsToShow: 7, color: .black)
-    static let flag = GameTheme(name: "Flags", emojis: ["🇺🇳","🇨🇳","🇧🇪","🇪🇺","🇪🇸","🇺🇸","🇬🇧"], numberOfCardsToShow: nil, color: .black)
+    static let animal = GameTheme(name: "Animals", emojis: ["🐶","🐱","🐭","🐹","🐰","🦊","🐻"], numberOfCardsToShowMinusOne: 5, color: .green)
+    static let fruit = GameTheme(name: "Fruits", emojis: ["🍏","🍎","🍐","🍊","🍋","🍌","🍉"], numberOfCardsToShowMinusOne: 5, color: .orange)
+    static let ball = GameTheme(name: "Ball", emojis: ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐"], numberOfCardsToShowMinusOne: nil, color: .blue)
+    static let car = GameTheme(name: "Cars", emojis: ["🚗","🚕","🚙","🚌","🚎","🏎","🚓"], numberOfCardsToShowMinusOne: 4, color: .yellow)
+    static let apple = GameTheme(name: "iProducts", emojis: ["⌚️","📱","💻","🖥","🖱","⌨️","💡"], numberOfCardsToShowMinusOne: 6, color: .black)
+    static let flag = GameTheme(name: "Flags", emojis: ["🇺🇳","🇨🇳","🇧🇪","🇪🇺","🇪🇸","🇺🇸","🇬🇧"], numberOfCardsToShowMinusOne: nil, color: .black)
     
     static let themes: [GameTheme] = [animal, fruit, ball, car, apple, flag]
 }

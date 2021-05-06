@@ -9,6 +9,7 @@ import Foundation
 
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
+    var theme: String
     
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -35,8 +36,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
     
     //Init function. A struct can have multiple init function. 
-    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairsOfCards: Int, theme: String, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
+        self.theme = theme
         for pairIndex in 0..<numberOfPairsOfCards {
             //The MemoryGame initializer, init itself with a function passed in to tell what the card content is.
             let content: CardContent = cardContentFactory(pairIndex)
