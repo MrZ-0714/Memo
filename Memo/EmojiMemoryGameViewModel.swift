@@ -11,8 +11,12 @@ class EmojiMemoryGameViewModel: ObservableObject {
     @Published private var model: MemoryGameModel<String> = EmojiMemoryGameViewModel.createMemoryGame()
 
     static func createMemoryGame() -> MemoryGameModel<String> {
-        let emojis: Array<String> = ["🧛🏻‍♀️","🗽","📷","🦠","💊"]
-        let emojisToUse = emojis.shuffled()[0...Int.random(in: 1...4)]
+        //Use a random theme
+        let chosenTheme: GameTheme = GameTheme.themes.randomElement()!
+        
+        let emojis: Array<String> = chosenTheme.emojis
+        let numberOfCardToShow = chosenTheme.numberOfCardsToShow ?? Int.random(in: 1...emojis.count)
+        let emojisToUse = emojis.shuffled()[0...numberOfCardToShow]
         return MemoryGameModel<String>(numberOfPairsOfCards: emojisToUse.count) { pairIndex in
             return emojisToUse[pairIndex]
         }
