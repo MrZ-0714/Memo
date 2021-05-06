@@ -9,7 +9,7 @@ import Foundation
 
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
-    var theme: GameTheme
+    var chosenTheme: GameTheme
     var score: Int = 0
     
     var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -44,9 +44,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
     
     //Init function. A struct can have multiple init function. 
-    init(numberOfPairsOfCards: Int, theme: GameTheme, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairsOfCards: Int, chosenTheme: GameTheme, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
-        self.theme = theme
+        self.chosenTheme = chosenTheme
         for pairIndex in 0..<numberOfPairsOfCards {
             //The MemoryGame initializer, init itself with a function passed in to tell what the card content is.
             let content: CardContent = cardContentFactory(pairIndex)

@@ -16,7 +16,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         let emojis: Array<String> = chosenTheme.emojis
         let numberOfCardToShow = chosenTheme.numberOfCardsToShowMinusOne ?? Int.random(in: 1...emojis.count - 1)
         let emojisToUse = emojis.shuffled()[0...numberOfCardToShow]
-        return MemoryGameModel<String>(numberOfPairsOfCards: emojisToUse.count, theme: chosenTheme) { pairIndex in
+        return MemoryGameModel<String>(numberOfPairsOfCards: emojisToUse.count, chosenTheme: chosenTheme) { pairIndex in
             return emojisToUse[pairIndex]
         }
     }
@@ -31,7 +31,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     }
     
     var chosenTheme: GameTheme {
-        model.theme
+        model.chosenTheme
     }
 
     //MARK: - Intent(s)
