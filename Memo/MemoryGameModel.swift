@@ -44,6 +44,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             cards.append(Card(id:pairIndex*2, content: content))
             cards.append(Card(id:pairIndex*2+1, content: content))
         }
+        //2. Your game should still shuffle the cards.
         cards.shuffle()
     }
     
