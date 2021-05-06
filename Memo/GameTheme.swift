@@ -31,7 +31,7 @@ struct GameTheme {
     static let ball = GameTheme(name: "Ball", emojis: ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐"], numberOfCardsToShowMinusOne: nil, color: .blue)
     static let car = GameTheme(name: "Cars", emojis: ["🚗","🚕","🚙","🚌","🚎","🏎","🚓"], numberOfCardsToShowMinusOne: 4, color: .yellow)
     static let apple = GameTheme(name: "iProducts", emojis: ["⌚️","📱","💻","🖥","🖱","⌨️","💡"], numberOfCardsToShowMinusOne: 6, color: .black)
-    static let flag = GameTheme(name: "Flags", emojis: ["🇺🇳","🇨🇳","🇧🇪","🇪🇺","🇪🇸","🇺🇸","🇬🇧"], numberOfCardsToShowMinusOne: nil, color: .black)
+    static let flag = GameTheme(name: "Flags", emojis: ["🇺🇳","🇨🇳","🇧🇪","🇪🇺","🇪🇸","🇺🇸","🇬🇧"], numberOfCardsToShowMinusOne: nil, color: .gray)
     
     static let themes: [GameTheme] = [animal, fruit, ball, car, apple, flag]
 }

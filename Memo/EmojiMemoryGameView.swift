@@ -14,10 +14,10 @@ struct EmojiMemoryGameView: View {
         VStack {
             HStack{
                 // 7. Show the theme’s name somewhere in your UI.
-                Text(viewModel.chosenTheme).font(.title)
+                Text(viewModel.chosenTheme.name).font(.title)
                 HStack(spacing: 1.0){
                     Text("Score: ").font(.body).multilineTextAlignment(.trailing)
-                    Text("2").multilineTextAlignment(.leading)
+                    Text("\(viewModel.score)").multilineTextAlignment(.leading)
                 }
                 .padding([.top, .leading, .trailing])
             }
@@ -31,7 +31,7 @@ struct EmojiMemoryGameView: View {
                 .aspectRatio(2/3, contentMode: .fit)
             }
             .padding()
-            .foregroundColor(Color.orange)
+            .foregroundColor(viewModel.chosenTheme.color)
             /*
              6. Add a “New Game” button to your UI which begins a brand new game.
              This new game should have a randomly chosen theme.
@@ -73,6 +73,8 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        return EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
+        return Group {
+            EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
+        }
     }
 }

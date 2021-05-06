@@ -9,7 +9,8 @@ import Foundation
 
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
-    var theme: String
+    var theme: GameTheme
+    var score: Int = 0
     
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -27,8 +28,15 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatcchIndex].content  {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatcchIndex].isMatched = true
+                    //8. Keep score in your game by giving 2 points for every match and
+                    score += 2
+                } else if (cards[chosenIndex].previouslySeen || cards[potentialMatcchIndex].previouslySeen) {
+                    //8. penalizing 1 point for every previously seen card that is involved in a mismatch.
+                    score -= 1
                 }
                 cards[chosenIndex].isFaceUp = true
+                cards[chosenIndex].previouslySeen = true
+                cards[potentialMatcchIndex].previouslySeen = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = chosenIndex
             }
@@ -36,7 +44,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
     
     //Init function. A struct can have multiple init function. 
-    init(numberOfPairsOfCards: Int, theme: String, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairsOfCards: Int, theme: GameTheme, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
         self.theme = theme
         for pairIndex in 0..<numberOfPairsOfCards {
@@ -55,5 +63,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         var content: CardContent
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var previouslySeen: Bool = false
     }
 }
