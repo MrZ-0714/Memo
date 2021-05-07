@@ -66,15 +66,15 @@ struct CardView: View {
     }
     
     //MARK: - Drawing Constants
-    let CornerRadius: CGFloat = 10
-    let LineWidth: CGFloat = 3
-    let FontScaleFactor: CGFloat = 0.75
+    private let CornerRadius: CGFloat = 10
+    private let LineWidth: CGFloat = 3
+    private let FontScaleFactor: CGFloat = 0.75
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        return Group {
-            EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
-        }
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        return Group {
+//            EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
+//        }
+//    }
+//}

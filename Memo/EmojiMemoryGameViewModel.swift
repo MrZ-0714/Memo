@@ -10,7 +10,7 @@ import SwiftUI
 class EmojiMemoryGameViewModel: ObservableObject {
     @Published private var model: MemoryGameModel<String> = EmojiMemoryGameViewModel.createMemoryGame()
     
-    static func createMemoryGame() -> MemoryGameModel<String> {
+    private static func createMemoryGame() -> MemoryGameModel<String> {
         //5. A new theme should be able to be added to your game with a single line of code.
         let chosenTheme: GameTheme = GameTheme.themes.randomElement()!
         let emojis: Array<String> = chosenTheme.emojis
