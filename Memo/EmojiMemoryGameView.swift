@@ -54,7 +54,8 @@ struct CardView: View {
                 if card.isFaceUp {
                     RoundedRectangle(cornerRadius: CornerRadius).fill(Color.white)
                     RoundedRectangle(cornerRadius: CornerRadius).stroke(lineWidth: LineWidth)
-                    Circle()
+                    CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
+                        .padding(5).opacity(ShapeOpacity)
                     Text(card.content)
                 } else {
                     if !card.isMatched {
@@ -69,7 +70,8 @@ struct CardView: View {
     //MARK: - Drawing Constants
     private let CornerRadius: CGFloat = 10
     private let LineWidth: CGFloat = 3
-    private let FontScaleFactor: CGFloat = 0.75
+    private let FontScaleFactor: CGFloat = 0.7
+    private let ShapeOpacity: Double = 0.44
 }
 
 struct ContentView_Previews: PreviewProvider {
