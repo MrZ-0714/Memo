@@ -51,19 +51,11 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: CornerRadius).fill(Color.white)
-                    RoundedRectangle(cornerRadius: CornerRadius).stroke(lineWidth: LineWidth)
-                    CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
-                        .padding(5).opacity(ShapeOpacity)
-                    Text(card.content)
-                } else {
-                    if !card.isMatched {
-                        RoundedRectangle(cornerRadius: CornerRadius).fill()
-                    }
-                }
+                CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
+                    .padding(5).opacity(ShapeOpacity)
+                Text(card.content).font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
             }
-            .font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
+            .modifier(Cardify(isFaceUp: card.isFaceUp))
         }
     }
     

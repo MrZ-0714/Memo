@@ -22,6 +22,7 @@
 		DEA6C646263B614C003C515A /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C645263B614C003C515A /* GridLayout.swift */; };
 		DEA6C648263B6859003C515A /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C647263B6859003C515A /* Array+Identifiable.swift */; };
 		DEFBF9DE2649D21B0073ACA5 /* CustomShape-Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBF9DD2649D21B0073ACA5 /* CustomShape-Pie.swift */; };
+		DEFBF9E02649EA4F0073ACA5 /* ViewModifier-Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBF9DF2649EA4F0073ACA5 /* ViewModifier-Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DEA6C645263B614C003C515A /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		DEA6C647263B6859003C515A /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		DEFBF9DD2649D21B0073ACA5 /* CustomShape-Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Pie.swift"; sourceTree = "<group>"; };
+		DEFBF9DF2649EA4F0073ACA5 /* ViewModifier-Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier-Cardify.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				DE700E30263772E0007CAD45 /* SceneDelegate.swift */,
 				DE8FB06E2638C5AE005050B4 /* MemoryGameModel.swift */,
 				DE700E32263772E0007CAD45 /* EmojiMemoryGameView.swift */,
+				DEFBF9DF2649EA4F0073ACA5 /* ViewModifier-Cardify.swift */,
 				DEFBF9DD2649D21B0073ACA5 /* CustomShape-Pie.swift */,
 				DE8FB0702638C91C005050B4 /* EmojiMemoryGameViewModel.swift */,
 				DEA6C643263B5B0C003C515A /* Grid.swift */,
@@ -181,6 +184,7 @@
 				DE700E33263772E0007CAD45 /* EmojiMemoryGameView.swift in Sources */,
 				DE700E36263772E0007CAD45 /* Memo.xcdatamodeld in Sources */,
 				DEA6C648263B6859003C515A /* Array+Identifiable.swift in Sources */,
+				DEFBF9E02649EA4F0073ACA5 /* ViewModifier-Cardify.swift in Sources */,
 				DEA6C644263B5B0C003C515A /* Grid.swift in Sources */,
 				DE8FB0712638C91C005050B4 /* EmojiMemoryGameViewModel.swift in Sources */,
 				DEA6C646263B614C003C515A /* GridLayout.swift in Sources */,
