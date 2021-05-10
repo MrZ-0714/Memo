@@ -33,6 +33,7 @@ struct CardView: View {
                 if card.isFaceUp {
                     RoundedRectangle(cornerRadius: CornerRadius).fill(Color.white)
                     RoundedRectangle(cornerRadius: CornerRadius).stroke(lineWidth: LineWidth)
+                    Circle()
                     Text(card.content)
                 } else {
                     if !card.isMatched {
@@ -50,8 +51,10 @@ struct CardView: View {
     private let FontScaleFactor: CGFloat = 0.75
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        return ContentView(viewModel: EmojiMemoryGame())
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        let game = EmojiMemoryGameViewModel()
+        game.choose(card: game.cards[0])
+        return EmojiMemoryGameView(viewModel: game)
+    }
+}
