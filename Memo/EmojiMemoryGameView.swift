@@ -48,14 +48,17 @@ struct EmojiMemoryGameView: View {
 struct CardView: View {
     var card: MemoryGameModel<String>.Card
     
+    @ViewBuilder
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
-                    .padding(5).opacity(ShapeOpacity)
-                Text(card.content).font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
+            if card.isFaceUp || !card.isMatched {
+                ZStack {
+                    CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
+                        .padding(5).opacity(ShapeOpacity)
+                    Text(card.content).font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
+                }
+                .cardify(isFaceUp: card.isFaceUp)
             }
-            .cardify(isFaceUp: card.isFaceUp)
         }
     }
     
