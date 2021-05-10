@@ -30,3 +30,9 @@ struct Cardify: ViewModifier {
     private let ShapeOpacity: Double = 0.44
     
 }
+
+extension View {
+    func cardify(isFaceUp: Bool) -> some View {
+        self.modifier(Cardify(isFaceUp: isFaceUp))
+    }
+}
