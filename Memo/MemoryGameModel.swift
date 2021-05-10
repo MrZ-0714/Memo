@@ -8,9 +8,11 @@
 import Foundation
 
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
-    var cards: Array<Card>
+    private(set) var cards: Array<Card>
+    var chosenTheme: GameTheme
+    var score: Int = 0
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
         set {
             for index in cards.indices {
@@ -26,8 +28,15 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatcchIndex].content  {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatcchIndex].isMatched = true
+                    //8. Keep score in your game by giving 2 points for every match and
+                    score += 2
+                } else if (cards[chosenIndex].previouslySeen || cards[potentialMatcchIndex].previouslySeen) {
+                    //8. penalizing 1 point for every previously seen card that is involved in a mismatch.
+                    score -= 1
                 }
                 cards[chosenIndex].isFaceUp = true
+                cards[chosenIndex].previouslySeen = true
+                cards[potentialMatcchIndex].previouslySeen = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = chosenIndex
             }
@@ -35,8 +44,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
     
     //Init function. A struct can have multiple init function. 
-    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairsOfCards: Int, chosenTheme: GameTheme, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
+        self.chosenTheme = chosenTheme
         for pairIndex in 0..<numberOfPairsOfCards {
             //The MemoryGame initializer, init itself with a function passed in to tell what the card content is.
             let content: CardContent = cardContentFactory(pairIndex)
@@ -44,6 +54,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             cards.append(Card(id:pairIndex*2, content: content))
             cards.append(Card(id:pairIndex*2+1, content: content))
         }
+        //2. Your game should still shuffle the cards.
         cards.shuffle()
     }
     
@@ -52,5 +63,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         var content: CardContent
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var previouslySeen: Bool = false
     }
 }
