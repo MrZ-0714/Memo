@@ -24,7 +24,7 @@ struct EmojiMemoryGameView: View {
             
             Grid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    withAnimation(.linear(duration: 2)){
+                    withAnimation(.linear){
                         viewModel.choose(card: card)
                     }
                 }
@@ -52,13 +52,32 @@ struct EmojiMemoryGameView: View {
 struct CardView: View {
     var card: MemoryGameModel<String>.Card
     
+    @State private var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation () {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
+    
     @ViewBuilder
     var body: some View {
         GeometryReader { geometry in
             if card.isFaceUp || !card.isMatched {
                 ZStack {
-                    CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
-                        .padding(5).opacity(ShapeOpacity)
+                    Group {
+                        if card.isConsumingBonusTime {
+                            CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( animatedBonusRemaining * 360 - 90), clockwise: true)
+                                .onAppear {
+                                    startBonusTimeAnimation()
+                                }
+                        } else {
+                            CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( card.bonusRemaining * 360 - 90), clockwise: true)
+                        }
+                        
+                    }
+                    .padding(5).opacity(ShapeOpacity)
                     Text(card.content).font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
                         .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
                         .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
