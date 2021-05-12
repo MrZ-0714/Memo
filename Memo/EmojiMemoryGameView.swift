@@ -24,7 +24,9 @@ struct EmojiMemoryGameView: View {
             
             Grid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
+                    withAnimation(.linear(duration: 2)){
+                        viewModel.choose(card: card)
+                    }
                 }
                 .padding(5)
                 //Change the aspect ratio to 2:3
@@ -38,8 +40,10 @@ struct EmojiMemoryGameView: View {
              You can put this button anywhere you think looks best in your UI.
              */
             Button("New Game"){
+                withAnimation(.easeInOut(duration: 1)) {
+                    viewModel.startNewGame()
+                }
                 print("NewGame pressed")
-                viewModel.startNewGame()
             }
         }
     }
@@ -56,8 +60,11 @@ struct CardView: View {
                     CustomShapePie(startAngle: Angle.degrees(0 - 90), endAngle: Angle.degrees( 90 - 90), clockwise: true)
                         .padding(5).opacity(ShapeOpacity)
                     Text(card.content).font(Font.system(size: min(geometry.size.height, geometry.size.width) * FontScaleFactor))
+                        .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                        .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
                 }
                 .cardify(isFaceUp: card.isFaceUp)
+                .transition(AnyTransition.scale)
             }
         }
     }
