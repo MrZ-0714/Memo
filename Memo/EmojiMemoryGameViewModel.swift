@@ -26,7 +26,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         model.cards
     }
     
-    var score: Int {
+    var score: Double {
         model.score
     }
     

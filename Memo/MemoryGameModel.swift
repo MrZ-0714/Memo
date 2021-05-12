@@ -10,7 +10,7 @@ import Foundation
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
     var chosenTheme: GameTheme
-    var score: Int = 0
+    var score: Double = 0
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -29,6 +29,12 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatcchIndex].isMatched = true
                     //8. Keep score in your game by giving 2 points for every match and
+                    if cards[chosenIndex].bonusRemaining > 0 || cards[potentialMatcchIndex].bonusRemaining > 0 {
+                        let extraCredit = cards[chosenIndex].bonusRemaining + cards[potentialMatcchIndex].bonusRemaining
+                        score += extraCredit
+                    } else {
+                        score += 0
+                    }
                     score += 2
                 } else if (cards[chosenIndex].previouslySeen || cards[potentialMatcchIndex].previouslySeen) {
                     //8. penalizing 1 point for every previously seen card that is involved in a mismatch.
